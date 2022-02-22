@@ -25,7 +25,10 @@ export class TodoController {
 
   @Post()
   async create(@Body() body: CreateTodoDto) {
-    return await this.todoService.create(body);
+    return await this.todoService.create({
+      task: body.task,
+      isDone: body.isDone,
+    });
   }
 
   @Get(':id')
