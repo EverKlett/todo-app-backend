@@ -15,7 +15,7 @@ export class TodoService {
   async findAll() {
     return await this.todoRepository.find({
       order: {
-        task: 'ASC',
+        createdAt: 'ASC',
       },
     });
   }
